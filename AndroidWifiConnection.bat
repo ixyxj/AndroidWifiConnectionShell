@@ -1,4 +1,4 @@
-@echo of
+@echo on
 
 adb kill-server
 
@@ -8,7 +8,7 @@ adb tcpip 5555
 ::adb shell ip addr show wlan0
 
 pause
-@echo of
+@echo offf
 adb shell ip route >temp 2>&1
 
 set /p str= <temp
@@ -24,14 +24,13 @@ if not "%u%"=="" (set /a n+=1
 goto her
 ) else (echo length:%n%) 
 
-@echo on
 echo %n%
 
 set /a len=%n%-13
 
 call set u=%%str:~%len%,12%%
 echo %u%:5555
-
+@echo on
 adb connect %u%:5555
 
 pause
