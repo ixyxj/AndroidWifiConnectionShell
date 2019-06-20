@@ -8,7 +8,7 @@ adb tcpip 5555
 ::adb shell ip addr show wlan0
 
 pause
-@echo offf
+@echo off
 adb shell ip route >temp 2>&1
 
 set /p str= <temp
